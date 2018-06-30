@@ -42,7 +42,7 @@ class Database
 	# Perform INSERT, UPDATE, SELECT, and DELETE operations on data #
 	#################################################################
 
-	/* Insert data into a table */
+	/* Insert data into a given table */
 	public function insert($table, $fields, $values)
 	{
 		if ((is_array($fields) && is_array($values)) && (count($fields) == count($values)))
@@ -205,9 +205,9 @@ class Database
 		}
 	}
 
-	##############################################################
-	# Initialise class and etablish a connection to the database #
-	##############################################################
+	###############################################################
+	# Initialise class and establish a connection to the database #
+	###############################################################
 	public function __construct($input_config=NULL)
 	{
 		$config = ($input_config == NULL) ? parse_ini_file(self::DB_CONFIG_FILE) : $input_config;
